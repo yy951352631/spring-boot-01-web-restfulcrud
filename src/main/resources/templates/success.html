@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>测试页面</title>
+    <meta charset="UTF-8">
+</head>
+<h1>success</h1>
+
+<body>
+<!--将我们div的值设置为hello变量中的值-->
+<!--带转义-->
+<div th:text="${hello}"></div>
+<!--不带转义-->
+<div th:utext="${hello}"></div>
+<table>
+    <!--注意：th：each写在哪个标签，每次遍历时就会生成一个该标签-->
+    <tr th:text="${user}" th:each="user:${users}">
+
+    </tr>
+</table>
+
+<h2>
+    <span th:each="user:${users}">[[${user}]]</span>
+
+</h2>
+
+</body>
+</html>
